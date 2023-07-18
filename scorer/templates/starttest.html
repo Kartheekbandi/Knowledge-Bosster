@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Scores</title>
+    <link href="{% static 'css/starttest.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+        <nav>
+            <ul id='MenuItems'>
+                <li>{{user.username}}</li>
+            </ul>
+        </nav>
+    </div>
+    <center>
+    <br>
+    <div class="boxed">
+       <h3>Take the quizes and test your knowledge in the below subjects. You can have only one test in each subject per a day</h3>
+    </div>
+    <br>
+    <h1 style="text-align:center";>Start the Tests!!</h1>
+    <br><br>
+    <div class="grid">
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="{%static 'images/img1.jpg' %}" alt="Mental Ability" />
+          <div class="card-content">
+            {%if timediff%}
+              <p class="card-text">
+                Mental Ability test here!!
+              </p>
+                <button onclick="window.location.href='/instructions/mat'" class="card-btn">Take test<span>&rarr;</span></button>
+            {%else%}
+              <p class="card-text" style='color:red;'}>
+                 test taken, Comeback again, visit resources and learn!!
+              </p>
+              <button onclick="window.location.href='/resources/english'" class="card-btn">Resources<span>&rarr;</span></button>
+            {%endif%}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="card">
+          <img
+            class="card-img" src="{%static 'images/img2.jpg' %}" alt="Grammar"/>
+          <div class="card-content">
+            {%if timediffmat%}
+              <p class="card-text">
+                English Grammar test here!!
+              </p>
+              <button class="card-btn" onclick="window.location.href='/instructions'">Take test<span>&rarr;</span></button>
+            {%else%}
+              <p class="card-text" style='color:red;'}>
+                test taken, Comeback again, visit resources and learn!!
+              </p>
+              <button onclick="window.location.href='/resources/english'" class="card-btn">Resources<span>&rarr;</span></button>
+           {%endif%}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="{%static 'images/img3.jpg' %}" alt="General Knowledge" />
+          <div class="card-content">
+            {%if timediffgk%}
+            <p class="card-text">
+               General Knowledge test here!!
+            </p>
+            <button class="card-btn" onclick="window.location.href='/instructions/gk'">Take test<span>&rarr;</span></button>
+            {%else%}
+            <p class="card-text" style='color:red;'}>
+              test taken, Comeback again, visit resources and learn!!
+            </p>
+            <button onclick="window.location.href='/resources/english'" class="card-btn">Resources<span>&rarr;</span></button>
+            {%endif%}
+          </div>
+        </div>
+      </div>
+    </div>
+    </center>
+  </body>
+</html>

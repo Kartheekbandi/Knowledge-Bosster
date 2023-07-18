@@ -1,0 +1,42 @@
+{%load static%}
+<!DOCTYPE html>
+<!--Code by Divinector (www.divinectorweb.com)-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Create responsive Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/home.css'%}">    
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <!--<img src="kb.png" alt="">-->
+                <h1>Knowledge Booster</h1>
+            </div>
+            <ul class="nav-area">
+            <li><a href="#">Home</a></li>
+            <li><a href="/home/about">About</a></li>
+            <li><a href="">Contact</a></li>
+            {% if user.is_authenticated%}
+				<li style="color:white">Hii {{user.username}} !!</li>
+				<li><a href="/home/logout">LogOut</a></li>
+			{% else %}
+                <li><a href="/home/signin">Login</a></li>
+                <li><a href="/home/signup">Register</a></li>					   
+			{%endif%}
+            </ul>
+        </div>
+        <div class="welcome-text">
+            <h1> Gear up your <span>Skills</span></h1>
+            <p>Learn and Improve!!</p>
+            {%if user.is_authenticated %}
+               <p>Test your skills by clicking here</p>
+               <br>
+               <button onclick="window.location.href='/starttest'">Explore!!</button>
+            {%endif%}
+        </div>
+    </header>
+</body>
+</html>

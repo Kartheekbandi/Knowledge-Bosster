@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Scores</title>
+    <link href="{% static 'css/results.css' %}" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <center>
+    <br>
+    <div class="boxed">
+       <h3>Your score is {{score}} out of {{totalscore}}</h3>
+    </div>
+    <br><br>
+    <h1 style="text-align:center";>Want to take other subject tests? click below</h1>
+    <br><br>
+    <button onclick="window.location.href='/starttest'">return to tests</button>
+    <br><br>
+    <br><br>
+    <h1 style="text-align:center";>Want to go to resources? click below</h1>
+    <br><br>
+    <button onclick="window.location.href='/resources/english'">Go to resources</button>
+    <!--
+    <div class="grid">
+
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="{%static 'images/img1.jpg' %}" alt="Mental Ability" />
+          <div class="card-content">
+            <p class="card-text">
+               Ready to gearup your mental ability skills, Click here!!
+            </p>
+            <button class="card-btn">Visit<span>&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card">
+          <img
+            class="card-img" src="{%static 'images/img2.jpg' %}" alt="Grammar"/>
+          <div class="card-content">
+            <p class="card-text">
+               Wanna improve your english grammar, Click here!!
+            </p>
+            <button class="card-btn">Visit<span>&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="{%static 'images/img3.jpg' %}" alt="General Knowledge" />
+          <div class="card-content">
+            <p class="card-text">
+               Improve your general awareness by clicking over here!!
+            </p>
+            <button class="card-btn">Visit<span>&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  -->
+    </center>
+  </body>
+</html>
